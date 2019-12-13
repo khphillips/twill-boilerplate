@@ -1,0 +1,20 @@
+{
+    "name": "lsrur/inspector",
+    "description": "Laravel Inspector, debugging and profiling tools for Web Artisans",
+    "license": "MIT",
+    "minimum-stability": "stable",
+     "keywords": [
+        "laravel", "debug", "profiler", "exceptions"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Lsrur\\Inspector\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "require": {
+        "lsrur/toolbelt" : "0.3.*" 
+    }
+}

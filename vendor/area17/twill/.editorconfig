@@ -1,0 +1,24 @@
+; This file is for unifying the coding style for different editors and IDEs.
+; More information at http://editorconfig.org
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.php]
+indent_size = 4
+
+[*.blade.php]
+indent_size = 4
+
+[*.stub]
+indent_size = 4

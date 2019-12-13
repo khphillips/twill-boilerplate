@@ -1,0 +1,9 @@
+.idea
+vendor/
+!assets/vendor
+!frontend/scss/vendor
+/node_modules
+assets/dist/*
+frontend/js/components/blocks/customs/*
+.DS_Store
+public/

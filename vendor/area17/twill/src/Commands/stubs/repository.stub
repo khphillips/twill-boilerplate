@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Repositories;
+
+{{repositoryImports}}
+use A17\Twill\Repositories\ModuleRepository;
+use App\Models\{{modelName}};
+
+class {{repositoryClassName}} extends ModuleRepository
+{
+    {{repositoryTraits}}
+
+    public function __construct({{modelName}} $model)
+    {
+        $this->model = $model;
+    }
+}
