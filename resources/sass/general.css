@@ -1,0 +1,34 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+body .v-application--wrap .content{
+	font-family: 'Red Hat Text', sans-serif;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.content{
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Noto Serif TC', serif;
+}
+h1{
+	font-size: 3em;
+	margin: 1em 0 .5em;
+}
+
+h2{
+	font-size: 2.5em;
+	margin: 1em 0 .5em;
+}
+
+body .theme--light.v-application {
+	padding-top: 50px;
+	background-image: url('https://images.unsplash.com/photo-1576503918400-0b982e6a98bf') !important;
+	background-size: cover;
+}
