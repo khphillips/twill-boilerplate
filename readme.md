@@ -1,13 +1,15 @@
-# medstream-2020
+# Laravel Twill Vue Vuetify Boilerplate
 
-## Project setup
+## Adding Model Modules and Resources
 ```
-npm install
+php artisan make:model Models/Todo -mcr
+php artisan twill:module Todo -TSMBR.  //translatable sluggable mediable blocks revisions 
 ```
 
-### Compiles and hot-reloads for development
+### Adding blocks?
 ```
-npm run serve
+php artisan twill:blocks
+npm run twill-build
 ```
 
 ### Compiles and minifies for production
