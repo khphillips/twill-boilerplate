@@ -17,9 +17,11 @@ npm run twill-build
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
+### Upstreram to boiler plate
+``
+git pull upstream master
+``
 
 ### Blueprint for models and controllers
 Unfortunately does not put them in App/Models so we have to do that manually. 
