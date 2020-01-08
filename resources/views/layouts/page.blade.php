@@ -7,3 +7,5 @@
       </div>
 
 @include('layouts.partials.footer')
+
+
