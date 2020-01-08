@@ -19,6 +19,22 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//for when language preference is passed
+Route::group([
+    'prefix' => '{locale}',
+    'middleware' => ['setLocale'],
+    'where' => ['locale' => 'en|fr'],
+], function() {
+    Route::prefix('page')->group(function() {
+        Route::get('{slug}', 'PageController@showSlugTranslation');
+    });
+});
+
+//for when just the slug is passed
+Route::prefix('page')->group(function() {
+    Route::get('{slug}', 'PageController@showSlug');
+});
+
+//for traditional resource style. 
+Route::resource('pages', 'PageController');

@@ -46,7 +46,34 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        //
+        $item = $page;
+        return view('site.page', compact('item'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Page  $page
+     * @return \Illuminate\Http\Response
+     */
+    public function showSlug($slug)
+    {
+        return $this->show(
+            Page::forSlug($slug)->visible()->firstOrFail()
+        );
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Page  $page
+     * @return \Illuminate\Http\Response
+     */
+    public function showSlugTranslation($locale = 'en', $slug)
+    {
+        return $this->show(
+            Page::forSlug($slug)->visible()->firstOrFail()
+        );
     }
 
     /**
