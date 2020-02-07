@@ -65,6 +65,7 @@ return array(
     'Madewithlove\\IlluminatePsrCacheBridge\\' => array($vendorDir . '/madewithlove/illuminate-psr-cache-bridge/src'),
     'Lsrur\\Inspector\\' => array($vendorDir . '/lsrur/inspector/src'),
     'League\\Glide\\' => array($vendorDir . '/league/glide/src', $vendorDir . '/league/glide-laravel/src', $vendorDir . '/league/glide-symfony/src'),
+    'League\\Flysystem\\Cached\\' => array($vendorDir . '/league/flysystem-cached-adapter/src'),
     'League\\Flysystem\\AwsS3v3\\' => array($vendorDir . '/league/flysystem-aws-s3-v3/src'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),

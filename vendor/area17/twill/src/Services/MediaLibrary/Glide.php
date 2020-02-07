@@ -84,6 +84,25 @@ class Glide implements ImageServiceInterface
         return $this->server->getImageResponse($path, $this->request->all());
     }
 
+
+    /**
+     * @param string $path
+     * @return StreamedResponse
+     */
+    public function getImageAsBase64($path, $params)
+    {
+        return $this->server->getImageAsBase64($path, $params);
+    }
+
+    public function getCachePath($path, $params){
+        return $this->server->getCachePath($path, $params);
+    }
+
+    public function getSourcePath($path){
+        return $this->server->getSourcePath($path);
+    }
+
+
     /**
      * @param string $id
      * @param array $params

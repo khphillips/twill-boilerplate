@@ -5,6 +5,9 @@
 
 @section('content')
 <v-card max-width="500" class="mx-auto">
+	<v-parallax height="400" dark src="{{ $item->getCloudImage('hero_image', 'default') }}">
+
+	</v-parallax>
     <v-card-title>
         <h1>{{ $item->title }}</h1>
     </v-card-title>

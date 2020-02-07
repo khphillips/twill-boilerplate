@@ -1,4 +1,4 @@
-@include('layouts.partials.meta')
+@include('layouts.partials.meta', ['title' => $item->meta_title, 'description' => $item->meta_description])
 
 @include('layouts.partials.header')
 

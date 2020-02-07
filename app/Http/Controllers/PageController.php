@@ -44,24 +44,22 @@ class PageController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
+    public function show($id)
     {
-        $item = $page;
+        if(is_numeric($id)){
+            $item = Page::visible()->findOrFail($id);
+        }else{
+            $item = Page::forSlug($id)->visible()->firstOrFail();
+        }
         return view('site.page', compact('item'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Page  $page
-     * @return \Illuminate\Http\Response
-     */
-    public function showSlug($slug)
-    {
-        return $this->show(
-            Page::forSlug($slug)->visible()->firstOrFail()
-        );
+
+    public function showFromPageUrl($slug){
+        $page = Page::where('page_url', $slug)->visible()->firstOrFail();
+        return $this->show($page->id);
     }
+
 
     /**
      * Display the specified resource.
@@ -71,9 +69,7 @@ class PageController extends Controller
      */
     public function showSlugTranslation($locale = 'en', $slug)
     {
-        return $this->show(
-            Page::forSlug($slug)->visible()->firstOrFail()
-        );
+        return $this->show($slug);
     }
 
     /**

@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 
 //for when language preference is passed
@@ -26,15 +26,18 @@ Route::group([
     'middleware' => ['setLocale'],
     'where' => ['locale' => 'en|fr'],
 ], function() {
-    Route::prefix('page')->group(function() {
+    Route::prefix('pages')->group(function() {
         Route::get('{slug}', 'PageController@showSlugTranslation');
     });
 });
 
-//for when just the slug is passed
-Route::prefix('page')->group(function() {
-    Route::get('{slug}', 'PageController@showSlug');
+//for when just the slug is passed 'pages/slug'
+Route::prefix('pages')->group(function() {
+    Route::get('{slug}', 'PageController@show');
 });
 
-//for traditional resource style. 
+//for traditional resource style.  'page/1'
 Route::resource('pages', 'PageController');
+
+//for all other routes... this will try and match a "Page" model to the slug and resolve for a page. 
+Route::get('{page}', 'PageController@showFromPageUrl');

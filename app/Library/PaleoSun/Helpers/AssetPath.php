@@ -29,4 +29,22 @@ class AssetPath {
         }
         return '/storage/' . $path;
     }
+
+
+    public static function image_path($path)
+    {
+        echo public_path() . '/' . $path;
+        exit();
+        //$mixPath = mix($path, $manifestDirectory);
+        $cdnUrl  = config('filesystems.disks.s3.url');
+        $env     = config('app.env');
+        // Reference CDN assets only in production or staging environemnt.
+        // In other environments, we should reference locally built assets.
+        if ($cdnUrl && ($env === 'production' || $env === 'staging')) {
+            return $cdnUrl . "/" . $path;
+        }
+        return '/storage/' . $path;
+    }
+
+
 }

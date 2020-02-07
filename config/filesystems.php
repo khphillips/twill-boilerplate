@@ -62,6 +62,11 @@ return [
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
+            'cache' => [
+                'store' => env('CACHE_DRIVER', 'file'),
+                'expire' => 600,
+                'prefix' => 's3-prefix',
+            ],
         ],
 
     ],
